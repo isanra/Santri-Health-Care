@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class pesan extends Model
 {
+protected $fillable = ['nama', 'isi'];
 
-public function up(): void
+public function up()
 {
-    schema::create('pesans', function (Blueprint $table) {
+    Schema::create('pesans', function (Blueprint $table) {
         $table->id();
         $table->string('nama');
-        $table->string('isi pesan');
+        $table->text('pesan');
         $table->timestamps();
     });
 }

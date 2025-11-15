@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use function PHPUnit\Framework\never;
+use App\Models\pesan;
 
 class UserController extends Controller
 {
@@ -12,8 +11,15 @@ class UserController extends Controller
     {
         return view('aspirasi');
     }
-    public function pesan(): void
+    public function pesan(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required',
+            'isi' => 'required',
+        ]);
+
+        Pesan::create($validated);
+
+        return redirect()->back()->with('selesai', 'Pesan telah dikirim.');
     }
 }

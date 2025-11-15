@@ -9,4 +9,5 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::controller(UserController::class)->group (function () {
     Route::get('/aspirasi', 'index');
     Route::post('/aspirasi', 'pesan');
+    Route::middleware('IsAdmin');
 });
