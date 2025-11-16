@@ -13,8 +13,8 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request -> role !== ('Admin')) {
-            return redirect('/aspirasi');
+        if ($request ->  role == ('Admin')) {
+            return redirect('/dashboard/aspirasi');
         }
         return $next($request);
     }

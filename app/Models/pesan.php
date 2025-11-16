@@ -4,17 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class pesan extends Model
+class Pesan extends Model
 {
-protected $fillable = ['nama', 'isi'];
-
-public function up()
-{
-    Schema::create('pesans', function (Blueprint $table) {
-        $table->id();
-        $table->string('nama');
-        $table->text('pesan');
-        $table->timestamps();
-    });
-}
+protected $table = 'Pesan';
+protected $fillable = ['nama', 'pesan'];
+protected $primaryKey = 'pesanId';
+public $incrementing = true;
+protected $keyType = 'int';
 }
