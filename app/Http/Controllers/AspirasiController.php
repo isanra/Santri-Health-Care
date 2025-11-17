@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pesan;
-use Symfony\Component\Console\Input\Input;
+use App\Constants\ViewConstants;
 
 class AspirasiController extends Controller
 {
     public function index()
     {
-        return view('aspirasi');
+        return view(ViewConstants::ASPIRASI_VIEW);
     }
-    public function pesan(Request $request)
+    
+    public function pesanCreate(Request $request)
     {
         $validated = $request->validate([
             'nama' => 'required',
@@ -23,14 +24,16 @@ class AspirasiController extends Controller
 
         return redirect()->back();
     }
-    public function pesanIndex()
+    
+    public function pesanAll()
     {
-        $pesan = Pesan::orderBy('created_at', 'desc')->get();
-        return view('pesans', compact('pesan'));
+        $pesan = Pesan::latest()->get();
+        return view(ViewConstants::PESANS_VIEW, compact('pesan'));
     }
-    public function pesanan($pesanId)
+    
+    public function pesanIndex($pesanId)
     {   
         $pesan = Pesan::findOrFail($pesanId);
-        return view('detail', compact('pesan'));
+        return view(ViewConstants::DETAIL_VIEW, compact('pesan'));
     }
 }
