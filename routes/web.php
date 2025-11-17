@@ -15,9 +15,7 @@ Route::controller(AspirasiController::class)->group(function () {
         Route::get('/aspirasi', 'index');
         Route::post('/aspirasi', 'pesan');
         Route::get('/aspirasi/pesan', 'pesanIndex');
-        Route::get('/aspirasi/pesan/{pesanId}', 'pesanan', function (string $pesanId) {
-            return 'pesan. '.$pesanId;
-        });
+        Route::get('/aspirasi/pesan/{pesanId}', 'pesanan');
     });
 })->middleware(IsAdmin::class);
 

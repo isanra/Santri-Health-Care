@@ -28,4 +28,9 @@ class AspirasiController extends Controller
         $pesan = Pesan::orderBy('created_at', 'desc')->get();
         return view('pesans', compact('pesan'));
     }
+    public function pesanan($pesanId)
+    {   
+        $pesan = Pesan::findOrFail($pesanId);
+        return view('detail', compact('pesan'));
+    }
 }
