@@ -23,7 +23,23 @@ Route::get('/dashboard', function () {
 Route::get('/aspirasi-box', function () {
     return view('Aspirasi-Box.aspirasi');
 })->name('aspirasi-box');
+// Dashboard khusus untuk aspirasi (dengan prefix berbeda)
+Route::get('/aspirasi-dashboard', function () {
+    return view('Aspirasi-Box.dashboard-aspirasibox');
+})->name('aspirasi-dashboard');
 
 Route::get('/manajemen-obat', function () {
     return view('Manajemen-Obat.obat');
 })->name('manajemen-obat');
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::get('/forgot-password', function () {
+    return 'Fitur lupa password belum tersedia';
+})->name('password.request');
+
+Route::get('/register', function () {
+    return 'Fitur lupa password belum tersedia';
+})->name('register');

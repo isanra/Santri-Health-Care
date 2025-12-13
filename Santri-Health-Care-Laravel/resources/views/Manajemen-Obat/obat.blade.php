@@ -11,10 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body class="relative min-h-screen px-[3.75rem] overflow-x-hidden">
-    <!-- Lingkaran dekoratif
-    <div class="absolute top-[-100px] right-[-100px] w-[350px] h-[350px] rounded-full primary-bg blur-[100px] opacity-100 -z-10"></div>
-    <div class="absolute bottom-[-100px] left-[-100px] w-[350px] h-[350px] rounded-full primary-bg blur-[100px] opacity-100 -z-10"></div> -->
-
     @include('components.navbar')
     
     <main id="page-content">
@@ -32,9 +28,9 @@
 
             <!-- ⚙️ Filter Dropdown -->
             <div class="relative">
-              <button id="filterToggle" class="flex items-center gap-2 px-5 py-3 bg-white rounded-full text-[#395886] font-semibold text-base sm:text-lg shadow-md border border-white/50 hover:bg-[#f8faff] active:scale-95 transition-all">
+              <button id="filterToggle" class="flex items-center justify-center w-full sm:w-auto gap-2 px-5 py-3 bg-white rounded-full text-[#395886] font-semibold text-base sm:text-lg shadow-md border border-white/50 hover:bg-[#f8faff] active:scale-95 transition-all">
                 <i class="fa-solid fa-filter"></i>
-                Filter
+                <span>Filter</span>
               </button>
 
               <!-- Dropdown muncul pas tombol diklik -->
@@ -62,7 +58,7 @@
       <!-- Card Section -->
       <section class="relative py-16 px-6">
         <div class="container mx-auto relative z-10">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Card Obat -->
             <div class="obat-card">
               <div class="obat-header">
@@ -100,6 +96,20 @@
               <div class="obat-content">
                 <h3 class="text-3xl font-bold mb-1">
                   <span class="inline-flex items-center justify-center w-4 h-4 bg-red-500 rounded-full mr-2 border-1"></span>
+                  Paracetamol
+                </h3>
+                <p class="text-gray-600 text-md">Paracetamol 500mg,<br />Paracetamol 500mg.</p>
+                <p class="text-gray-500 text-md mt-3">Stok tersedia : 10 Strip</p>
+              </div>
+            </div>
+
+            <div class="obat-card">
+              <div class="obat-header">
+                <img src="{{ asset('img/Manajemen-Obat/obat.jpg') }}" alt="Paracetamol" class="w-full h-full object-contain" />
+              </div>
+              <div class="obat-content">
+                <h3 class="text-3xl font-bold mb-1">
+                  <span class="inline-flex items-center justify-center w-4 h-4 bg-yellow-500 rounded-full mr-2 border-1"></span>
                   Paracetamol
                 </h3>
                 <p class="text-gray-600 text-md">Paracetamol 500mg,<br />Paracetamol 500mg.</p>

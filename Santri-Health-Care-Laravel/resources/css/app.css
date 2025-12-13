@@ -22,6 +22,11 @@ body {
     background: linear-gradient(135deg, #f0f3fa 0%, #b1c9ef 100%);
     letter-spacing: -0.06em;
 }
+@media (max-width: 767px) {
+    body {
+        letter-spacing: 0;
+    }
+}
 
 #page-content {
     opacity: 1;
@@ -50,7 +55,133 @@ body {
     }
 }
 
-/* Index */
+/* welcome */
+/* Mobile responsive styles */
+@media (max-width: 767px) {
+    .plus-decoration {
+        width: 3rem;
+        opacity: 0.5;
+    }
+
+    /* Mobile feature cards - perfect design */
+    .mobile-feature-card {
+        height: auto;
+        min-height: 100px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(57, 88, 134, 0.1);
+        transition: all 0.2s ease;
+    }
+
+    .mobile-feature-card:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        border-color: rgba(57, 88, 134, 0.2);
+    }
+
+    .mobile-feature-header {
+        background: linear-gradient(135deg, #8aaee0 0%, #b1c9ef 100%);
+        flex-shrink: 0;
+    }
+
+    .mobile-feature-content {
+        background-color: white;
+    }
+
+    /* Judul yang lebih besar di mobile */
+    .mobile-feature-content h3 {
+        font-size: 20px;
+        color: #395886;
+        margin-bottom: 4px;
+        line-height: 1.2;
+    }
+
+    /* Text styles for mobile */
+    .mobile-feature-content p {
+        font-size: 12px;
+        line-height: 1.4;
+        color: #395886;
+        margin: 0;
+    }
+
+    .mobile-feature-content strong {
+        font-weight: 700;
+        color: #395886;
+    }
+}
+
+/* Tablet responsive styles (768px and above) */
+@media (min-width: 768px) {
+    .mobile-feature-card,
+    .mobile-feature-header,
+    .mobile-feature-content {
+        display: none;
+    }
+}
+
+/* Small tablet adjustments (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+    .mobile-feature-card {
+        min-height: 110px;
+    }
+
+    .mobile-feature-header img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .mobile-feature-content h3 {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .mobile-feature-content p {
+        font-size: 13px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 375px) {
+    .mobile-feature-card {
+        min-height: 90px;
+    }
+
+    .mobile-feature-header {
+        padding: 10px;
+    }
+
+    .mobile-feature-content {
+        padding: 10px;
+    }
+
+    .mobile-feature-header img {
+        width: 8px;
+        height: 8px;
+    }
+
+    .mobile-feature-content h3 {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    .mobile-feature-content p {
+        font-size: 11px;
+    }
+}
+
+/* Judul page yang lebih besar di mobile */
+@media (max-width: 767px) {
+    h1 {
+        line-height: 1.2 !important;
+        margin-bottom: 16px !important;
+    }
+
+    section.z-20.relative.pt-12 {
+        padding-top: 20px !important;
+    }
+}
+
 /* nav */
 
 #navHighlight {
@@ -271,6 +402,238 @@ body {
 .eval-card {
     @apply rounded-2xl p-6 sm:p-8 text-center shadow-md backdrop-blur-sm border border-white/40 text-base sm:text-lg;
 }
+/* ============================================
+   MOBILE STYLES UNTUK ASISTEN KESEHATAN
+   Desktop tetap menggunakan CSS asli
+   ============================================ */
+
+/* Mobile: Grid 2 kolom dengan styling khusus */
+@media (max-width: 767px) {
+    /* Card container untuk mobile */
+    .asisten-card-mobile {
+        display: flex;
+        flex-direction: column;
+        height: 280px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        background-color: white;
+    }
+
+    /* Header untuk mobile */
+    .asisten-header-mobile {
+        height: 120px;
+        background: linear-gradient(135deg, #8aaee0 0%, #b1c9ef 100%);
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    /* Content untuk mobile */
+    .asisten-content-mobile {
+        padding: 1rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Judul untuk mobile */
+    .asisten-content-mobile h3 {
+        font-size: 16px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 38px;
+    }
+
+    /* Deskripsi untuk mobile */
+    .asisten-content-mobile p {
+        font-size: 11px;
+        line-height: 1.3;
+        margin-bottom: 8px;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Button untuk mobile */
+    .asisten-button-mobile {
+        background: linear-gradient(
+            135deg,
+            rgba(138, 174, 224, 0.25) 0%,
+            rgba(177, 201, 239, 0.25) 100%
+        );
+        backdrop-filter: blur(7.5px);
+        -webkit-backdrop-filter: blur(7.5px);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        font-weight: 600;
+        padding: 6px 10px;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 8px rgba(57, 88, 134, 0.15),
+            inset -1px -2px 3px rgba(255, 255, 255, 0.5),
+            inset 1px 2px 3px rgba(255, 255, 255, 0.4);
+        font-size: 11px;
+        margin-top: auto;
+    }
+
+    .asisten-button-mobile::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMjUiLz48L3N2Zz4=");
+        opacity: 0.1;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+    }
+
+    .asisten-button-mobile:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 12px rgba(57, 88, 134, 0.25),
+            inset -1px -2px 4px rgba(255, 255, 255, 0.5),
+            inset 1px 2px 4px rgba(255, 255, 255, 0.45);
+    }
+}
+
+/* Desktop: TETAP PAKAI CSS ASLI */
+/* HAPUS semua perubahan untuk desktop di CSS sebelumnya */
+
+/* Untuk layar sangat kecil (≤ 375px) */
+@media (max-width: 375px) {
+    .asisten-card-mobile {
+        height: 260px;
+    }
+
+    .asisten-header-mobile {
+        height: 100px;
+    }
+
+    .asisten-content-mobile h3 {
+        font-size: 15px;
+        min-height: 36px;
+    }
+
+    .asisten-content-mobile p {
+        font-size: 10px;
+    }
+
+    .asisten-button-mobile {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+}
+
+/* Untuk layar kecil (376px - 424px) */
+@media (min-width: 376px) and (max-width: 424px) {
+    .asisten-card-mobile {
+        height: 270px;
+    }
+
+    .asisten-content-mobile h3 {
+        font-size: 15px;
+    }
+
+    .asisten-content-mobile p {
+        font-size: 11px;
+    }
+}
+
+/* Untuk layar medium mobile (425px - 767px) */
+@media (min-width: 425px) and (max-width: 767px) {
+    .asisten-card-mobile {
+        height: 290px;
+    }
+
+    .asisten-content-mobile h3 {
+        font-size: 17px;
+    }
+
+    .asisten-content-mobile p {
+        font-size: 12px;
+    }
+
+    .asisten-button-mobile {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+}
+
+/* Hanya untuk tablet (768px - 1023px) - Opsional jika perlu */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Biarkan seperti desktop, atau tambah penyesuaian kecil jika perlu */
+}
+/* ============================================
+   RESPONSIVE STYLES UNTUK MOBILE & TABLET
+   Desktop tetap menggunakan styling asli
+   ============================================ */
+
+/* Mobile (≤ 640px) */
+@media (max-width: 640px) {
+    .asisten-card {
+        height: 280px !important;
+        border-radius: 12px !important;
+    }
+
+    .asisten-header {
+        height: 110px !important;
+    }
+
+    .asisten-content {
+        padding: 12px !important;
+    }
+
+    .asisten-button {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+        border-radius: 8px !important;
+    }
+}
+
+/* Tablet (641px - 767px) */
+@media (min-width: 641px) and (max-width: 767px) {
+    .asisten-card {
+        height: 300px !important;
+    }
+
+    .asisten-header {
+        height: 130px !important;
+    }
+
+    .asisten-content {
+        padding: 16px !important;
+    }
+
+    .asisten-button {
+        padding: 10px 16px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* Small Desktop / Large Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .asisten-card {
+        height: 380px !important;
+    }
+
+    .asisten-header {
+        height: 160px !important;
+    }
+}
+
+/* detail-asisten-kesehatan */
+
+/* Desktop (≥ 1024px) - GUNAKAN STYLING ASLI */
+/* Tidak perlu perubahan, sudah perfect */
 
 /* Dashboard */
 /* Dashboard Table Styles */
@@ -373,6 +736,126 @@ table {
 .time-filter.active {
     @apply bg-[#395886] text-white border-[#395886];
 }
+
+/* ============================================
+   RESPONSIVE STYLES UNTUK DASHBOARD
+   Desktop tetap menggunakan styling asli
+   ============================================ */
+
+/* Mobile (≤ 639px) */
+@media (max-width: 639px) {
+    /* Tabel lebih kompak */
+    .table-cell,
+    .table-header {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+    }
+
+    /* Filter select lebih kecil */
+    .glass-filter {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+        border-radius: 10px !important;
+    }
+
+    /* Search bar lebih kecil */
+    .relative.flex.items-center {
+        width: 100% !important;
+    }
+
+    /* Statistik cards lebih kecil */
+    .bg-blue-50 {
+        padding: 10px 12px !important;
+    }
+
+    /* Grafik lebih kecil */
+    .flex.items-end.justify-between {
+        height: 80px !important;
+    }
+
+    .flex.items-end.justify-between .w-6 {
+        width: 18px !important;
+    }
+
+    /* Filter buttons lebih kecil */
+    .time-filter {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* Tablet (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+    .table-cell,
+    .table-header {
+        padding: 10px 14px !important;
+        font-size: 14px !important;
+    }
+
+    .glass-filter {
+        padding: 10px 14px !important;
+        font-size: 14px !important;
+    }
+
+    .time-filter {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+    }
+}
+
+/* Desktop (≥ 1024px) - GUNAKAN STYLING ASLI */
+/* Tidak ada perubahan untuk desktop */
+
+/* Untuk layar sangat kecil (≤ 375px) */
+@media (max-width: 375px) {
+    .table-cell,
+    .table-header {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+    }
+
+    .glass-filter {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+    }
+
+    .bg-blue-50 {
+        padding: 8px 10px !important;
+    }
+
+    .time-filter {
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+    }
+
+    /* Grafik lebih kecil lagi */
+    .flex.items-end.justify-between {
+        height: 60px !important;
+    }
+
+    .flex.items-end.justify-between .w-6 {
+        width: 14px !important;
+    }
+}
+
+/* Untuk layar kecil (376px - 424px) */
+@media (min-width: 376px) and (max-width: 424px) {
+    .table-cell,
+    .table-header {
+        padding: 7px 11px !important;
+        font-size: 12px !important;
+    }
+
+    .glass-filter {
+        padding: 7px 11px !important;
+        font-size: 12px !important;
+    }
+
+    .time-filter {
+        padding: 5px 9px !important;
+        font-size: 11px !important;
+    }
+}
 /* Manajemen obat */
 @keyframes fadeIn {
     from {
@@ -414,4 +897,1141 @@ table {
 
 .obat-content {
     padding: 1.5rem;
+}
+/* ============================================
+   MANAJEMEN OBAT RESPONSIVE - MOBILE FIX
+   ============================================ */
+
+/* Mobile adjustments (≤ 767px) */
+@media (max-width: 767px) {
+    /* Body adjustments */
+    body.relative {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Section Heading */
+    section.z-20.relative.pt-32 {
+        padding-top: 2rem !important;
+        padding-bottom: 1.5rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Title */
+    h2.text-5xl {
+        font-size: 1.75rem !important;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Filter Container - FIXED LAYOUT */
+    .flex.flex-col.sm\\:flex-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Search Bar - Full width */
+    .relative.flex.items-center.w-full {
+        width: 100% !important;
+        order: 1;
+    }
+
+    .relative.flex.items-center i {
+        margin-left: 1rem !important;
+        font-size: 1.125rem;
+    }
+
+    .relative.flex.items-center input {
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* Filter Button - Beside search bar */
+    .relative:last-child {
+        width: 100% !important;
+        order: 2;
+    }
+
+    button#filterToggle {
+        width: 100% !important;
+        padding: 0.875rem 1.5rem !important;
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    /* Filter Dropdown */
+    #filterDropdown {
+        width: 100% !important;
+        margin-top: 0.5rem !important;
+        right: 0;
+    }
+
+    /* Card Section */
+    section.relative.py-16 {
+        padding-top: 1rem !important;
+        padding-bottom: 4rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Grid - 2 cards per row on mobile */
+    .grid.grid-cols-1.sm\\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+
+    /* Obat Card - Taller for mobile */
+    .obat-card {
+        display: flex !important;
+        flex-direction: row !important;
+        height: 160px !important;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .obat-header {
+        width: 40% !important;
+        height: 100% !important;
+        flex-shrink: 0;
+        background-color: #f4f6fb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .obat-header img {
+        width: 80% !important;
+        height: 80% !important;
+        object-fit: contain;
+    }
+
+    .obat-content {
+        width: 60% !important;
+        padding: 1rem !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .obat-content h3 {
+        font-size: 1.125rem !important;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .obat-content h3 span {
+        width: 10px !important;
+        height: 10px !important;
+        margin-right: 0.5rem;
+        flex-shrink: 0;
+    }
+
+    .obat-content p {
+        font-size: 0.8125rem !important;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .obat-content p.text-gray-600 {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Very small screens (≤ 375px) */
+@media (max-width: 375px) {
+    .grid.grid-cols-1.sm\\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+
+    .obat-card {
+        height: 150px !important;
+    }
+
+    .obat-content {
+        padding: 0.75rem !important;
+    }
+
+    .obat-content h3 {
+        font-size: 1rem !important;
+    }
+
+    .obat-content p {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* Small screens (376px - 424px) */
+@media (min-width: 376px) and (max-width: 424px) {
+    .obat-card {
+        height: 155px !important;
+    }
+
+    .obat-content h3 {
+        font-size: 1.0625rem !important;
+    }
+}
+
+/* Tablet (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+    .grid.grid-cols-1.sm\\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    .obat-card {
+        height: 170px !important;
+    }
+
+    .obat-content h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .obat-content p {
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Tablet landscape (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Desktop (≥ 1024px) - Keep original styling */
+@media (min-width: 1024px) {
+    /* Reset mobile styles for desktop */
+    .obat-card {
+        display: flex;
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    .obat-header {
+        width: 100% !important;
+        height: 180px !important;
+    }
+
+    .obat-content {
+        width: 100% !important;
+        padding: 1.5rem !important;
+    }
+}
+
+/* Extra small height screens */
+@media (max-height: 600px) and (max-width: 767px) {
+    .obat-card {
+        height: 140px !important;
+    }
+
+    .obat-content {
+        padding: 0.75rem !important;
+    }
+}
+/* aspirasibox */
+/* ============================================
+   ASPIRASI MOBILE RESPONSIVE
+   Only adjust sizing and layout for mobile
+   ============================================ */
+
+/* Mobile adjustments only (≤ 767px) */
+@media (max-width: 767px) {
+    /* Body adjustments */
+    body.relative {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 0 !important;
+    }
+
+    /* Main content adjustments */
+    main#page-content {
+        min-height: calc(100vh - 80px);
+    }
+
+    /* Section adjustments */
+    section.flex-col {
+        min-height: calc(100vh - 120px);
+        justify-content: flex-start !important;
+        padding-top: 2rem !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    /* Title adjustments */
+    h2.text-2xl {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+        margin-bottom: 2rem !important;
+    }
+
+    /* Input container adjustments */
+    .w-full.max-w-2xl {
+        max-width: 100% !important;
+        border-radius: 20px !important;
+        padding: 1.25rem 1rem !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* Plus button adjustments */
+    .w-full.max-w-2xl button.primary-color.text-2xl {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #8aaee0 0%, #b1c9ef 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .w-full.max-w-2xl button.primary-color.text-2xl i {
+        color: white !important;
+        font-size: 1.5rem;
+    }
+
+    /* Input field adjustments */
+    .w-full.max-w-2xl input.flex-grow {
+        font-size: 1rem !important;
+        padding: 0.5rem;
+        letter-spacing: 0.3px;
+    }
+
+    .w-full.max-w-2xl input.flex-grow::placeholder {
+        color: #666 !important;
+        opacity: 0.8 !important;
+        font-size: 1rem;
+    }
+
+    /* Microphone button - hide on mobile */
+    .w-full.max-w-2xl button.primary-color.text-xl {
+        display: none !important;
+    }
+}
+
+/* Very small screens (≤ 375px) */
+@media (max-width: 375px) {
+    h2.text-2xl {
+        font-size: 1.375rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .w-full.max-w-2xl {
+        padding: 1rem 0.875rem !important;
+    }
+
+    .w-full.max-w-2xl button.primary-color.text-2xl {
+        width: 44px;
+        height: 44px;
+    }
+
+    .w-full.max-w-2xl button.primary-color.text-2xl i {
+        font-size: 1.375rem;
+    }
+
+    .w-full.max-w-2xl input.flex-grow {
+        font-size: 0.9375rem !important;
+    }
+
+    .w-full.max-w-2xl input.flex-grow::placeholder {
+        font-size: 0.9375rem !important;
+    }
+}
+
+/* Small screens (376px - 424px) */
+@media (min-width: 376px) and (max-width: 424px) {
+    .w-full.max-w-2xl {
+        padding: 1.125rem 0.9375rem !important;
+    }
+}
+
+/* Tablet adjustments (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .w-full.max-w-2xl {
+        max-width: 600px !important;
+    }
+}
+
+/* Desktop (≥ 1025px) - Keep original styling */
+@media (min-width: 1025px) {
+    /* No changes needed, keep original desktop styling */
+}
+/* dashboard-aspirasibox */
+
+/* ============================================
+    DASHBOARD ASPIRASI STYLES
+    ============================================ */
+
+/* Container */
+.dashboard-aspirasi-container {
+    height: calc(100vh - 80px);
+    display: flex;
+    gap: 1rem;
+}
+
+/* Sidebar */
+.dashboard-aspirasi-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: #fcfdfe;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat List */
+.dashboard-aspirasi-chat-list {
+    width: 350px;
+    flex-shrink: 0;
+    background: #fcfdfe;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat Content */
+.dashboard-aspirasi-chat-content {
+    flex: 1;
+    min-width: 0;
+    background: #fcfdfe;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scrollable Area */
+.dashboard-aspirasi-scrollable {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #f3f4f6;
+}
+
+.dashboard-aspirasi-scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dashboard-aspirasi-scrollable::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 3px;
+}
+
+.dashboard-aspirasi-scrollable::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 3px;
+}
+
+.dashboard-aspirasi-scrollable::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Primary Color */
+.dashboard-aspirasi-primary-color {
+    color: #395886;
+}
+
+/* Menu Items */
+.dashboard-aspirasi-menu-item {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-aspirasi-menu-item:hover {
+    background-color: #f9fafb;
+}
+
+.dashboard-aspirasi-menu-active {
+    background-color: #395886 !important;
+    color: white !important;
+}
+
+.dashboard-aspirasi-menu-active .dashboard-aspirasi-primary-color,
+.dashboard-aspirasi-menu-active i {
+    color: white !important;
+}
+
+/* Badges */
+.dashboard-aspirasi-badge {
+    min-width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0 0.5rem;
+    border-radius: 9999px;
+}
+
+.dashboard-aspirasi-badge-inbox {
+    background-color: #395886;
+    color: #dbeafe;
+}
+
+.dashboard-aspirasi-badge-starred {
+    background-color: #395886;
+    color: #dbeafe;
+}
+
+.dashboard-aspirasi-badge-unread {
+    background-color: #395886;
+    color: #dbeafe;
+}
+
+.dashboard-aspirasi-menu-active .dashboard-aspirasi-badge {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+/* Chat Items */
+.dashboard-aspirasi-chat-item {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    padding: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.dashboard-aspirasi-chat-item:hover {
+    background-color: #f9fafb;
+}
+
+.dashboard-aspirasi-chat-item-active {
+    background-color: #f3f4f6 !important;
+    border-right: 3px solid #395886;
+}
+
+/* Status Indicator */
+.dashboard-aspirasi-status-indicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    border: 2px solid white;
+    border-radius: 9999px;
+}
+
+.dashboard-aspirasi-status-online {
+    background-color: #10b981;
+}
+
+.dashboard-aspirasi-status-offline {
+    background-color: #9ca3af;
+}
+
+/* Message Bubbles */
+.dashboard-aspirasi-message-bubble {
+    max-width: 70%;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-aspirasi-message-sent {
+    background-color: #dbeafe;
+    border-bottom-right-radius: 0.25rem;
+    margin-left: auto;
+}
+
+.dashboard-aspirasi-message-received {
+    background-color: #dbeafe;
+    border-bottom-left-radius: 0.25rem;
+    margin-right: auto;
+}
+
+.dashboard-aspirasi-message-time {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* Buttons */
+.dashboard-aspirasi-action-btn,
+.dashboard-aspirasi-input-btn {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.dashboard-aspirasi-action-btn:hover,
+.dashboard-aspirasi-input-btn:hover {
+    transform: scale(1.1);
+}
+
+.dashboard-aspirasi-send-btn {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.dashboard-aspirasi-send-btn:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+/* Chat Item Components */
+.dashboard-aspirasi-chat-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.dashboard-aspirasi-chat-avatar {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.dashboard-aspirasi-chat-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.dashboard-aspirasi-chat-name {
+    font-weight: bold;
+    color: #395886;
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dashboard-aspirasi-chat-time {
+    font-size: 0.75rem;
+    color: #6b7280;
+    flex-shrink: 0;
+}
+
+.dashboard-aspirasi-chat-preview {
+    font-size: 0.875rem;
+    color: #6b7280;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 0.25rem;
+}
+
+/* Unread Indicator */
+.dashboard-aspirasi-unread-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: #395886;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+/* Input Field */
+#dashboardAspirasiMessageInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #395886;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-aspirasi-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .dashboard-aspirasi-sidebar,
+    .dashboard-aspirasi-chat-list,
+    .dashboard-aspirasi-chat-content {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .dashboard-aspirasi-sidebar {
+        height: auto;
+    }
+
+    .dashboard-aspirasi-chat-list {
+        height: 300px;
+    }
+
+    .dashboard-aspirasi-chat-content {
+        height: 400px;
+    }
+}
+/* ============================================
+   DASHBOARD ASPIRASI RESPONSIVE - MOBILE
+   Desktop tetap menggunakan styling asli
+   ============================================ */
+
+/* Mobile adjustments only (≤ 767px) */
+@media (max-width: 767px) {
+    /* Body adjustments */
+    body.relative {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Main content adjustments */
+    main#page-content {
+        margin-top: 0 !important;
+        padding: 0 !important;
+        height: calc(100vh - 80px);
+        overflow: hidden;
+    }
+
+    /* Dashboard container */
+    .dashboard-aspirasi-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: relative;
+    }
+
+    /* Sidebar - hide on mobile */
+    .dashboard-aspirasi-sidebar {
+        display: none !important;
+    }
+
+    /* Chat List - full screen on mobile */
+    .dashboard-aspirasi-chat-list {
+        width: 100% !important;
+        height: 100%;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    /* Chat Content - initially hidden on mobile */
+    .dashboard-aspirasi-chat-content {
+        width: 100% !important;
+        height: 100%;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        display: none !important; /* Hidden by default on mobile */
+        flex-direction: column;
+    }
+
+    /* Show chat content when active */
+    .dashboard-aspirasi-chat-content.active {
+        display: flex !important;
+    }
+
+    /* Hide chat list when chat content is active */
+    .dashboard-aspirasi-chat-list.hidden {
+        display: none !important;
+    }
+
+    /* Chat header */
+    .dashboard-aspirasi-chat-list .p-4.border-b {
+        padding: 1rem !important;
+        background: white;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .dashboard-aspirasi-chat-list h3 {
+        font-size: 1.25rem !important;
+        font-weight: 700;
+    }
+
+    /* Chat items - more compact for mobile */
+    .dashboard-aspirasi-chat-item {
+        padding: 0.875rem 1rem !important;
+    }
+
+    .dashboard-aspirasi-chat-avatar {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .dashboard-aspirasi-chat-avatar img {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .dashboard-aspirasi-status-indicator {
+        width: 10px !important;
+        height: 10px !important;
+        border-width: 1.5px !important;
+    }
+
+    .dashboard-aspirasi-chat-name {
+        font-size: 0.9375rem !important;
+        font-weight: 600;
+    }
+
+    .dashboard-aspirasi-chat-time {
+        font-size: 0.75rem !important;
+    }
+
+    .dashboard-aspirasi-chat-preview {
+        font-size: 0.8125rem !important;
+        margin-top: 0.125rem !important;
+    }
+
+    /* Mobile Navigation Bottom Bar */
+    .dashboard-aspirasi-mobile-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+        padding: 0.5rem;
+        z-index: 40;
+    }
+
+    .dashboard-aspirasi-mobile-nav-btn {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        color: #6b7280;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .dashboard-aspirasi-mobile-nav-btn i {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .dashboard-aspirasi-mobile-nav-btn span {
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    .dashboard-aspirasi-mobile-nav-btn.active {
+        color: #395886;
+    }
+
+    .dashboard-aspirasi-mobile-nav-btn.active i {
+        color: #395886;
+    }
+
+    /* Chat Content Header - Mobile */
+    .dashboard-aspirasi-chat-content .p-4.border-b {
+        padding: 1rem !important;
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 30;
+    }
+
+    /* Mobile Back Button */
+    .dashboard-aspirasi-mobile-back-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 0.5rem;
+    }
+
+    /* Chat Messages Area */
+    .dashboard-aspirasi-scrollable {
+        padding: 1rem !important;
+    }
+
+    /* Message bubbles - adjust for mobile */
+    .dashboard-aspirasi-message-bubble {
+        max-width: 85% !important;
+        padding: 0.875rem !important;
+    }
+
+    .dashboard-aspirasi-message-time {
+        font-size: 0.6875rem !important;
+    }
+
+    /* Input area */
+    .dashboard-aspirasi-chat-content .p-4.border-t {
+        padding: 1rem !important;
+        background: white;
+        position: sticky;
+        bottom: 0;
+        z-index: 30;
+    }
+
+    .dashboard-aspirasi-input-btn {
+        padding: 0.75rem !important;
+    }
+
+    .dashboard-aspirasi-send-btn {
+        padding: 0.75rem !important;
+    }
+
+    /* Scrollable area adjustments */
+    .dashboard-aspirasi-scrollable {
+        flex: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Add padding bottom untuk mobile nav */
+    .dashboard-aspirasi-chat-list .dashboard-aspirasi-scrollable {
+        padding-bottom: 80px !important;
+    }
+
+    .dashboard-aspirasi-chat-content .dashboard-aspirasi-scrollable {
+        padding-bottom: 80px !important;
+    }
+}
+
+/* Very small screens (≤ 375px) */
+@media (max-width: 375px) {
+    .dashboard-aspirasi-chat-item {
+        padding: 0.75rem 0.875rem !important;
+    }
+
+    .dashboard-aspirasi-chat-avatar {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    .dashboard-aspirasi-chat-avatar img {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    .dashboard-aspirasi-chat-name {
+        font-size: 0.875rem !important;
+    }
+
+    .dashboard-aspirasi-chat-preview {
+        font-size: 0.75rem !important;
+    }
+
+    .dashboard-aspirasi-message-bubble {
+        max-width: 90% !important;
+        padding: 0.75rem !important;
+    }
+
+    .dashboard-aspirasi-message-bubble p {
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Tablet adjustments (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .dashboard-aspirasi-container {
+        height: calc(100vh - 80px) !important;
+    }
+
+    .dashboard-aspirasi-sidebar {
+        width: 200px !important;
+        padding: 1rem !important;
+    }
+
+    .dashboard-aspirasi-chat-list {
+        width: 300px !important;
+    }
+
+    /* Hide mobile nav on tablet/desktop */
+    .dashboard-aspirasi-mobile-nav,
+    .dashboard-aspirasi-mobile-back-btn {
+        display: none !important;
+    }
+}
+
+/* Desktop (≥ 1024px) - Keep original styling */
+@media (min-width: 1024px) {
+    /* Hide mobile elements on desktop */
+    .dashboard-aspirasi-mobile-nav,
+    .dashboard-aspirasi-mobile-back-btn {
+        display: none !important;
+    }
+
+    /* Reset mobile styles for desktop */
+    .dashboard-aspirasi-container {
+        height: calc(100vh - 80px) !important;
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1rem !important;
+    }
+
+    .dashboard-aspirasi-sidebar {
+        display: block !important;
+        width: 250px !important;
+        padding: 1.5rem !important;
+    }
+
+    .dashboard-aspirasi-chat-list {
+        width: 350px !important;
+        display: flex !important;
+    }
+
+    .dashboard-aspirasi-chat-content {
+        display: flex !important;
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+
+    .dashboard-aspirasi-chat-list,
+    .dashboard-aspirasi-chat-content {
+        border-radius: 1rem !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* Remove bottom padding for desktop */
+    .dashboard-aspirasi-chat-list .dashboard-aspirasi-scrollable,
+    .dashboard-aspirasi-chat-content .dashboard-aspirasi-scrollable {
+        padding-bottom: 0 !important;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (max-width: 767px) {
+    .dashboard-aspirasi-chat-item {
+        padding: 0.625rem 0.75rem !important;
+    }
+
+    .dashboard-aspirasi-chat-avatar {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .dashboard-aspirasi-chat-avatar img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .dashboard-aspirasi-message-bubble {
+        padding: 0.625rem !important;
+    }
+
+    .dashboard-aspirasi-message-bubble p {
+        font-size: 0.8125rem !important;
+    }
+}
+
+/* login */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* BODY BACKGROUND (SATU-SATUNYA BACKGROUND) */
+.login-body {
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at top left,
+      #f2f6ff,
+      #b7cdee
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* WRAPPER */
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+/* ICON */
+.login-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.25rem;
+}
+
+/* TITLE */
+.login-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #395886;
+  margin-bottom: 0.5rem;
+}
+
+/* SUBTITLE */
+.login-subtitle {
+  font-size: 1rem;
+  color: #395886;
+  margin-bottom: 2rem;
+}
+
+/* FORM */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* INPUT */
+.login-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: #395886;
+}
+
+.login-form input::placeholder {
+  color: #8aaee0;
+}
+
+/* BUTTON */
+.login-form button {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(
+      to right,
+      #8aaee0,
+      #b1c9ef
+  );
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.login-form button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .login-wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.95rem;
+  }
 }
