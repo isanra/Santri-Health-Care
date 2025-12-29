@@ -64,17 +64,4 @@ class ObatController extends Controller
         $obat->delete();
         return response()->json(['message' => 'Data obat berhasil dihapus']);
     }
-    public function addBatch(Request $request, $id)
-{
-    $obat = Obat::findOrFail($id);
-
-    $batch = $obat->batches()->create([
-        'batch_code' => $request->batch_code,
-        'exp_date'   => $request->exp_date,
-        'stok'       => $request->stok,
-    ]);
-
-    return response()->json($batch, 201);
-}
-
 }

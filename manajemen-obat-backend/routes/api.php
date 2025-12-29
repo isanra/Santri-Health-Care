@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ObatController;
@@ -8,3 +8,5 @@ Route::post('/obats', [ObatController::class, 'store']);
 Route::get('/obats/{id}', [ObatController::class, 'show']);
 Route::put('/obats/{id}', [ObatController::class, 'update']);
 Route::delete('/obats/{id}', [ObatController::class, 'destroy']);
+Route::post('/obats/{id}/batches', [ObatController::class, 'addBatch']);
+

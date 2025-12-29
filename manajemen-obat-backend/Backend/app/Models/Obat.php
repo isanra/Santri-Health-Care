@@ -5,29 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Obat extends Model
-{
+class Obat extends Model {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
         'nama_obat',
         'kategori',
+        'stok',
         'satuan',
         'harga',
+        'tanggal_kedaluwarsa',
         'image_url',
-        'deskripsi',
+        'deskripsi'
     ];
 
-    // RELASI KE BATCH
-    public function batches()
-    {
-        return $this->hasMany(ObatBatch::class);
-    }
+    protected $casts = [
+      'tanggal_kedaluwarsa' => 'date',
+    ];
 
-    // TOTAL STOK DARI SEMUA BATCH
-    public function getTotalStokAttribute()
+    public function user()
     {
-        return $this->batches()->sum('stok');
+        return $this->belongsTo(\App\Models\User::class);
     }
 }
